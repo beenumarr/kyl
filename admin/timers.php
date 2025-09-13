@@ -67,40 +67,51 @@ $timers = $stmt->fetchAll();
 <body>
     <div class="container-fluid">
         <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="nav flex-column">
-                        <a href="dashboard.php" class="nav-link">
-                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                        </a>
-                        <a href="applications.php" class="nav-link">
-                            <i class="fas fa-file-alt me-2"></i> Applications
-                        </a>
-                        <a href="events.php" class="nav-link">
-                            <i class="fas fa-calendar me-2"></i> Events
-                        </a>
-                        <a href="timers.php" class="nav-link active">
-                            <i class="fas fa-clock me-2"></i> Timers
-                        </a>
-                        <a href="admins.php" class="nav-link">
-                            <i class="fas fa-users-cog me-2"></i> Admins
-                        </a>
-                        <a href="settings.php" class="nav-link">
-                            <i class="fas fa-cog me-2"></i> Settings
-                        </a>
-                    </div>
+            <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link active">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
 
-                    <div class="mt-auto">
-                        <a href="logout.php" class="nav-link">
-                            <i class="fas fa-sign-out-alt me-2"></i> Logout
-                        </a>
-                    </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
+
 
             <!-- Main Content -->
             <div class="col-md-9 col-lg-10 px-4 py-4">
@@ -186,7 +197,7 @@ $timers = $stmt->fetchAll();
     <!-- Add Timer Modal -->
     <div class="modal fade" id="addTimerModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Timer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -205,7 +216,7 @@ $timers = $stmt->fetchAll();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Timer</button>
+                        <button type="submit" class="btn-new">Add Timer</button>
                     </div>
                 </form>
             </div>
@@ -215,7 +226,7 @@ $timers = $stmt->fetchAll();
     <!-- Edit Timer Modal -->
     <div class="modal fade" id="editTimerModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Timer</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -242,7 +253,7 @@ $timers = $stmt->fetchAll();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Timer</button>
+                        <button type="submit" class="btn-new">Update Timer</button>
                     </div>
                 </form>
             </div>

@@ -61,121 +61,108 @@ $batches = $stmt->fetchAll();
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="nav flex-column">
-                    <a href="dashboard.php" class="nav-link">
-                        <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                    </a>
-                    <a href="applications.php" class="nav-link active">
-                        <i class="fas fa-file-alt me-2"></i> Applications
-                    </a>
-                    <a href="events.php" class="nav-link">
-                        <i class="fas fa-calendar me-2"></i> Events
-                    </a>
-                    <a href="admins.php" class="nav-link">
-                        <i class="fas fa-users-cog me-2"></i> Admins
-                    </a>
-                    <a href="logout.php" class="nav-link">
-                        <i class="fas fa-sign-out-alt me-2"></i> Logout
-                    </a>
+     <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link active">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 px-4 py-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Batch Management</h2>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addBatchModal">
-                        <i class="fas fa-plus me-2"></i> Add New Batch
-                    </button>
-                </div>
 
-                <!-- Batches Table -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Status</th>
-                                        <th>Applications</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($batches as $batch): ?>
-                                        <?php
-                                        // Get application count for this batch
-                                        $stmt = $pdo->prepare("SELECT COUNT(*) FROM fellowship_applications WHERE batch_id = ?");
-                                        $stmt->execute([$batch['id']]);
-                                        $applicationCount = $stmt->fetchColumn();
-                                        ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($batch['name']); ?></td>
-                                            <td><?php echo htmlspecialchars($batch['description']); ?></td>
-                                            <td><?php echo date('M d, Y', strtotime($batch['application_start'])); ?></td>
-                                            <td><?php echo date('M d, Y', strtotime($batch['application_end'])); ?></td>
-                                            <td>
-                                                <span class="badge bg-<?php
-                                                                        echo $batch['status'] === 'open' ? 'success' : ($batch['status'] === 'closed' ? 'danger' : 'warning');
-                                                                        ?>">
-                                                    <?php echo ucfirst($batch['status']); ?>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <a href="applications.php?batch_id=<?php echo $batch['id']; ?>">
-                                                    <?php echo $applicationCount; ?> applications
-                                                </a>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                                        Action
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <a class="dropdown-item update-status" href="#"
-                                                                data-id="<?php echo $batch['id']; ?>"
-                                                                data-status="open">
-                                                                <i class="fas fa-play me-2"></i> Open Applications
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item update-status" href="#"
-                                                                data-id="<?php echo $batch['id']; ?>"
-                                                                data-status="closed">
-                                                                <i class="fas fa-stop me-2"></i> Close Applications
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <hr class="dropdown-divider">
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item text-danger delete-batch" href="#"
-                                                                data-id="<?php echo $batch['id']; ?>">
-                                                                <i class="fas fa-trash me-2"></i> Delete
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+    <div class="main-content">
+        <div class="dashboard-header">
+            <div class="header-left">
+                <h3>Batch Management</h3>
+            </div>
+            <div class="header-right">
+                <button class="btn-new" data-bs-toggle="modal" data-bs-target="#addBatchModal"><i class="fas fa-plus"></i> Add New Batch</button>
+            </div>
+        </div>
+
+        <div class="recent-section">
+            <h5>Batches</h5>
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Applications</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($batches as $batch): ?>
+                            <?php
+                            // Get application count for this batch
+                            $stmt = $pdo->prepare("SELECT COUNT(*) FROM fellowship_applications WHERE batch_id = ?");
+                            $stmt->execute([$batch['id']]);
+                            $applicationCount = $stmt->fetchColumn();
+                            $badgeClass = $batch['status'] === 'open' ? 'badge bg-light text-success' : ($batch['status'] === 'closed' ? 'badge bg-light text-danger' : 'badge bg-light text-warning');
+                            ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($batch['name']); ?></td>
+                                <td><?php echo htmlspecialchars($batch['description']); ?></td>
+                                <td><?php echo date('M d, Y', strtotime($batch['application_start'])); ?></td>
+                                <td><?php echo date('M d, Y', strtotime($batch['application_end'])); ?></td>
+                                <td><span class="<?php echo $badgeClass; ?>"><?php echo ucfirst($batch['status']); ?></span></td>
+                                <td><a href="applications.php?batch_id=<?php echo $batch['id']; ?>"><?php echo $applicationCount; ?> applications</a></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">Action</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item update-status" href="#" data-id="<?php echo $batch['id']; ?>" data-status="open"><i class="fas fa-play me-2"></i> Open Applications</a></li>
+                                            <li><a class="dropdown-item update-status" href="#" data-id="<?php echo $batch['id']; ?>" data-status="closed"><i class="fas fa-stop me-2"></i> Close Applications</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item text-danger delete-batch" href="#" data-id="<?php echo $batch['id']; ?>"><i class="fas fa-trash me-2"></i> Delete</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -183,7 +170,7 @@ $batches = $stmt->fetchAll();
     <!-- Add Batch Modal -->
     <div class="modal fade" id="addBatchModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Batch</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -207,7 +194,7 @@ $batches = $stmt->fetchAll();
                             <label class="form-label">Application End Date</label>
                             <input type="datetime-local" class="form-control" name="application_end" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Create Batch</button>
+                        <button type="submit" class="btn btn-primary btn-new">Create Batch</button>
                     </form>
                 </div>
             </div>

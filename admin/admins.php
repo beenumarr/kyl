@@ -114,84 +114,93 @@ $admins = $stmt->fetchAll();
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="nav flex-column">
-                        <a href="dashboard.php" class="nav-link">
-                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                        </a>
-                        <a href="applications.php" class="nav-link">
-                            <i class="fas fa-file-alt me-2"></i> Applications
-                        </a>
-                        <a href="events.php" class="nav-link">
-                            <i class="fas fa-calendar me-2"></i> Events
-                        </a>
-                        <a href="admins.php" class="nav-link active">
-                            <i class="fas fa-users-cog me-2"></i> Admins
-                        </a>
-                        <a href="settings.php" class="nav-link">
-                            <i class="fas fa-cog me-2"></i> Settings
-                        </a>
-                    </div>
+         <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link active">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
 
-                    <div class="mt-auto">
-                        <a href="logout.php" class="nav-link">
-                            <i class="fas fa-sign-out-alt me-2"></i> Logout
-                        </a>
-                    </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 px-4 py-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Admin Management</h2>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAdminModal">
-                        <i class="fas fa-plus me-2"></i> Add New Admin
-                    </button>
-                </div>
+        <!-- Main Content -->
+        <div class="main-content px-4 py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Admin Management</h2>
+                <button class="btn-new" data-bs-toggle="modal" data-bs-target="#addAdminModal">
+                    <i class="fas fa-plus me-2"></i> Add New Admin
+                </button>
+            </div>
 
-                <!-- Admins Table -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Created Date</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($admins as $admin): ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($admin['name']); ?></td>
-                                            <td><?php echo htmlspecialchars($admin['email']); ?></td>
-                                            <td><?php echo date('M d, Y', strtotime($admin['created_at'])); ?></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary edit-admin" data-bs-toggle="modal"
-                                                    data-bs-target="#editAdminModal" data-admin='<?php echo json_encode($admin); ?>'>
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <?php if ($admin['id'] != $_SESSION['admin_id']): ?>
-                                                    <button class="btn btn-sm btn-danger delete-admin" data-id="<?php echo $admin['id']; ?>">
-                                                        <i class="fas fa-trash"></i>
-                                                    </button>
-                                                <?php endif; ?>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+            <!-- Admins Table -->
+            <div class="recent-section">
+                <div class="table-responsive">
+                    <table class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Created Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($admins as $admin): ?>
+                                <tr>
+                                    <td><?php echo htmlspecialchars($admin['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($admin['email']); ?></td>
+                                    <td><?php echo date('M d, Y', strtotime($admin['created_at'])); ?></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary edit-admin" data-bs-toggle="modal"
+                                            data-bs-target="#editAdminModal" data-admin='<?php echo json_encode($admin); ?>'>
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <?php if ($admin['id'] != $_SESSION['admin_id']): ?>
+                                            <button class="btn btn-sm btn-outline-primary delete-admin" data-id="<?php echo $admin['id']; ?>">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -200,7 +209,7 @@ $admins = $stmt->fetchAll();
     <!-- Add Admin Modal -->
     <div class="modal fade" id="addAdminModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Admin</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -239,7 +248,7 @@ $admins = $stmt->fetchAll();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Admin</button>
+                        <button type="submit" class="btn-new">Add Admin</button>
                     </div>
                 </form>
             </div>
@@ -249,7 +258,7 @@ $admins = $stmt->fetchAll();
     <!-- Edit Admin Modal -->
     <div class="modal fade" id="editAdminModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Admin</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -290,7 +299,7 @@ $admins = $stmt->fetchAll();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Admin</button>
+                        <button type="submit" class="btn-new">Update Admin</button>
                     </div>
                 </form>
             </div>

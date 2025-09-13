@@ -117,93 +117,91 @@ unset($ev);
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="nav flex-column">
-                        <a href="dashboard.php" class="nav-link">
-                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                        </a>
-                        <a href="applications.php" class="nav-link">
-                            <i class="fas fa-file-alt me-2"></i> Applications
-                        </a>
-                        <a href="events.php" class="nav-link active">
-                            <i class="fas fa-calendar me-2"></i> Events
-                        </a>
+     <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link active">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
 
-                        <a href="admins.php" class="nav-link">
-                            <i class="fas fa-users-cog me-2"></i> Admins
-                        </a>
-                        <a href="settings.php" class="nav-link">
-                            <i class="fas fa-cog me-2"></i> Settings
-                        </a>
-                    </div>
-
-                    <div class="mt-auto">
-                        <a href="logout.php" class="nav-link">
-                            <i class="fas fa-sign-out-alt me-2"></i> Logout
-                        </a>
-                    </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 px-4 py-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Events Management</h2>
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEventModal">
-                        <i class="fas fa-plus me-2"></i> Add New Event
-                    </button>
-                </div>
 
-                <!-- Events Table -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Title</th>
-                                        <th>Date</th>
-                                        <th>Location</th>
-                                        <th>Status</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($events as $event): ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($event['title']); ?></td>
-                                            <td><?php echo date('M d, Y', strtotime($event['event_date'])); ?></td>
-                                            <td><?php echo htmlspecialchars($event['location']); ?></td>
-                                            <td>
-                                                <span class="badge bg-<?php
-                                                                        echo $event['status'] === 'active' ? 'success' : ($event['status'] === 'cancelled' ? 'danger' : 'warning');
-                                                                        ?>">
-                                                    <?php echo ucfirst($event['status']); ?>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <button class="btn btn-sm btn-primary edit-event" data-bs-toggle="modal"
-                                                    data-bs-target="#editEventModal" data-event='<?php echo json_encode($event); ?>'>
-                                                    <i class="fas fa-edit"></i>
-                                                </button>
-                                                <button class="btn btn-sm btn-danger delete-event" data-id="<?php echo $event['id']; ?>">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+    <div class="main-content">
+        <div class="dashboard-header">
+            <div class="header-left">
+                <h3>Events Management</h3>
+            </div>
+            <div class="header-right">
+                <button class="btn-new" data-bs-toggle="modal" data-bs-target="#addEventModal"><i class="fas fa-plus"></i> Add New Event</button>
+            </div>
+        </div>
+
+        <div class="recent-section">
+            <h5>Events</h5>
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($events as $event): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($event['title']); ?></td>
+                                <td><?php echo date('M d, Y', strtotime($event['event_date'])); ?></td>
+                                <td><?php echo htmlspecialchars($event['location']); ?></td>
+                                <?php $eStatus = $event['status'] ?? 'inactive'; $eBadge = $eStatus === 'active' ? 'badge bg-light text-success' : ($eStatus === 'cancelled' ? 'badge bg-light text-danger' : 'badge bg-light text-warning'); ?>
+                                <td><span class="<?php echo $eBadge; ?>"><?php echo ucfirst($eStatus); ?></span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-primary edit-event" data-bs-toggle="modal" data-bs-target="#editEventModal" data-event='<?php echo json_encode($event); ?>'><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-sm btn-danger delete-event" data-id="<?php echo $event['id']; ?>"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -211,7 +209,7 @@ unset($ev);
     <!-- Add Event Modal -->
     <div class="modal fade" id="addEventModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Add New Event</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -256,7 +254,7 @@ unset($ev);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Add Event</button>
+                        <button type="submit" class="btn btn-primary btn-new">Add Event</button>
                     </div>
                 </form>
             </div>
@@ -266,7 +264,7 @@ unset($ev);
     <!-- Edit Event Modal -->
     <div class="modal fade" id="editEventModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Edit Event</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -319,7 +317,7 @@ unset($ev);
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Update Event</button>
+                        <button type="submit" class="btn btn-primary btn-new">Update Event</button>
                     </div>
                 </form>
             </div>

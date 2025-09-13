@@ -50,7 +50,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                 <h1>Katagum Youth League</h1>
                 <p>Empowering Youths for National Development</p>
                 <div class="hero-btns">
-                    <a href="#get-involved" class="btn">Join the Movement</a>
+                    <a href="events.php" class="btn">Events</a>
                     <a href="gallery.html" class="btn btn-outline">View Our Work</a>
                 </div>
                 <div class="countdown-card" id="countdown-card" style="display: none;">
@@ -177,7 +177,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                 </div>
             </div>
 
-                        <div class="programs fade-in" style="animation-delay: 0.4s;">
+            <div class="programs fade-in" style="animation-delay: 0.4s;">
                 <h3>Our Core Programs</h3>
                 <div class="programs-grid">
                     <div class="program-card">
@@ -292,7 +292,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
             <h2 class="fade-in">Meet the Team</h2>
             <div class="team-grid fade-in" style="animation-delay: 0.2s; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
                 <!-- Executive Leadership -->
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/jamilu.jpeg" alt="Comrade Jamilu Alhaji Mato" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -302,7 +302,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/char.jpeg" alt="Aminu Abubakar Wali" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -312,7 +312,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/3.jpeg" alt="Muhammad Muhammad" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -321,7 +321,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                         <p style="color: #666; font-size: 0.98rem; margin-bottom: 10px;">Secretary General</p>
                     </div>
                 </div>
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/4.jpeg" alt="Ibrahim Bappah Aliyu" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -331,7 +331,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
                 <!-- Directors -->
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/WhatsApp Image 2025-07-03 at 10.12.52 PM.jpeg" alt="Aliyu Musa Dada" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -341,7 +341,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/mm.jpeg" alt="Musbahu Muhammad" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -351,7 +351,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/placeholder.jpg" alt="Muhammad Isah Dogo" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -361,7 +361,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/com.jpeg" alt="Ibrahim MaiBulangu" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -372,7 +372,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                 </div>
 
                 <!-- Additional Team Members -->
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/placeholder.jpg" alt="Muhammad Shehu" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -382,7 +382,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/placeholder.jpg" alt="Mahmud Abdullahi" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -392,7 +392,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/placeholder.jpg" alt="Amina Abdulkadir" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -402,7 +402,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/12.jpeg" alt="Umar Muhammad" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -412,7 +412,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/13.jpeg" alt="Amadu Abdu" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -422,7 +422,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/14.jpeg" alt="Sulaiman Ahmad Faggo" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -432,7 +432,7 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </div>
                 </div>
 
-                <div class="team-member" style="background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
+                <div class="team-member" style="background: #212121; border-radius: 12px; box-shadow: 0 2px 12px rgb(226 132 8); padding: 24px 18px; max-width: 260px; text-align: center; flex: 1 1 220px;">
                     <div class="member-image" style="width: 110px; height: 110px; margin: 0 auto 16px; border-radius: 50%; overflow: hidden; border: 3px solid #eaeaea;">
                         <img src="img/15.jpeg" alt="Usman Rufa'i Jama'are" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
@@ -445,24 +445,9 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
         </div>
     </section>
 
-    <!-- Partners Section -->
-    <section class="partners">
-        <div class="container">
-            <h2 class="fade-in">Our Partners</h2>
-            <div class="partners-grid fade-in"
-                style="animation-delay: 0.2s; display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap;">
-                <img src="img/wunti.png" alt="Wunti Al-Khair Foundation" class="partner-logo"
-                    style="max-height: 80px; max-width: 180px; object-fit: contain;">
-                <img src="img/ideas.png" alt="Ideas & Data Academy" class="partner-logo"
-                    style="max-height: 80px; max-width: 180px; object-fit: contain;">
-            </div>
-            <p class="fade-in" style="text-align: center; margin-top: 30px; animation-delay: 0.4s;">We're grateful for
-                the support of our partners who share our vision for youth empowerment in Katagum.</p>
-        </div>
-    </section>
 
     <!-- Get Involved Section -->
-    <section class="get-involved" id="get-involved">
+    <!-- <section class="get-involved" id="get-involved">
         <div class="container">
             <h2 class="fade-in">Get Involved</h2>
             <div class="involved-container fade-in" style="animation-delay: 0.2s;">
@@ -514,6 +499,40 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                     </form>
                 </div>
             </div>
+        </div>
+    </section> -->
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <h2 class="fade-in">Our Partners</h2>
+
+            <!-- Horizontal auto scroller -->
+            <div class="partners-scroller fade-in" style="animation-delay: 0.2s;">
+                <div class="partners-track">
+                    <img src="img/wunti.png" alt="Wunti Al-Khair Foundation" class="partner-logo">
+                    <img src="img/ideas.png" alt="Ideas & Data Academy" class="partner-logo">
+                    <img src="img/logo.png" alt="KYL" class="partner-logo">
+                    <img src="img/jamilu.jpeg" alt="Partner 4" class="partner-logo">
+                    <img src="img/malamzaki.jpeg" alt="Partner 5" class="partner-logo">
+                    <img src="img/nyff.jpeg" alt="Partner 6" class="partner-logo">
+                    <img src="img/first-lady-Hajiya-Aisha-Bala-Mohammed.jpg" alt="Partner 7" class="partner-logo">
+                    <img src="img/placeholder.jpg" alt="Partner 8" class="partner-logo">
+
+                    <!-- duplicate set for seamless looping -->
+                    <img src="img/wunti.png" alt="Wunti Al-Khair Foundation" class="partner-logo">
+                    <img src="img/ideas.png" alt="Ideas & Data Academy" class="partner-logo">
+                    <img src="img/logo.png" alt="KYL" class="partner-logo">
+                    <img src="img/jamilu.jpeg" alt="Partner 4" class="partner-logo">
+                    <img src="img/malamzaki.jpeg" alt="Partner 5" class="partner-logo">
+                    <img src="img/nyff.jpeg" alt="Partner 6" class="partner-logo">
+                    <img src="img/first-lady-Hajiya-Aisha-Bala-Mohammed.jpg" alt="Partner 7" class="partner-logo">
+                    <img src="img/placeholder.jpg" alt="Partner 8" class="partner-logo">
+                </div>
+            </div>
+
+            <p class="fade-in" style="text-align: center; margin-top: 30px; animation-delay: 0.4s;">We're grateful for
+                the support of our partners who share our vision for youth empowerment in Katagum.</p>
         </div>
     </section>
 
@@ -587,8 +606,9 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
         </div>
     </section>
 
+
     <!-- Footer -->
-        <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-logo">
@@ -605,175 +625,609 @@ header("Content-Security-Policy: default-src 'self'; script-src 'self' https://c
                 <a href="gallery.html">Gallery</a>
             </div>
             <p class="copyright">© 2024 Katagum Youth League. All Rights Reserved.</p>
+            <!-- <p class="copyright">© Innovation Company</p> -->
         </div>
     </footer>
 </body>
+
 </html>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainNav = document.getElementById('mainNav');
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ?
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+        mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ?
+            '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+    });
+
+    // Scroll Header Effect
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Aims Toggle
+    const aimsToggleBtns = document.querySelectorAll('.aims-toggle button');
+
+    aimsToggleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons and content
+            document.querySelector('.aims-toggle button.active').classList.remove('active');
+            document.querySelector('.aims-content.active').classList.remove('active');
+
+            // Add active class to clicked button and corresponding content
+            btn.classList.add('active');
+            const lang = btn.getAttribute('data-lang');
+            document.getElementById(`${lang}-aims`).classList.add('active');
         });
+    });
 
-        // Scroll Header Effect
-        const header = document.getElementById('header');
+    // Scroll Animation
+    const fadeElements = document.querySelectorAll('.fade-in');
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+    const fadeInOnScroll = () => {
+        fadeElements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (elementTop < windowHeight - 100) {
+                element.style.opacity = '1';
             }
         });
+    };
 
-        // Aims Toggle
-        const aimsToggleBtns = document.querySelectorAll('.aims-toggle button');
+    window.addEventListener('scroll', fadeInOnScroll);
+    window.addEventListener('load', fadeInOnScroll);
 
-        aimsToggleBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons and content
-                document.querySelector('.aims-toggle button.active').classList.remove('active');
-                document.querySelector('.aims-content.active').classList.remove('active');
+    // Form Submission
+    const volunteerForm = document.getElementById('volunteerForm');
+    const contactForm = document.getElementById('contactForm');
 
-                // Add active class to clicked button and corresponding content
-                btn.classList.add('active');
-                const lang = btn.getAttribute('data-lang');
-                document.getElementById(`${lang}-aims`).classList.add('active');
+    // Google Apps Script Web App URL
+    const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwOjUiss76xxbYIIDOe8yaRNBgkfJYyTxR2es1yH7BT702HDXLrjCaS1GobxIrZCvt-0Q/exec';
+    // New endpoint for contact form (replace with your Apps Script URL for sending email)
+    const CONTACT_FORM_URL = 'https://script.google.com/macros/s/AKfycbw3ackhF2ltd7cJ_E9SV3WTGyHdBc7A6am48dNImsmJRVxa1eP9dYtvXvcnmoGs-54Y/exec';
+
+    volunteerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = volunteerForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Loading...';
+        submitBtn.disabled = true;
+        const formData = new FormData(volunteerForm);
+        try {
+            const response = await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                body: formData
             });
-        });
-
-        // Scroll Animation
-        const fadeElements = document.querySelectorAll('.fade-in');
-
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-
-                if (elementTop < windowHeight - 100) {
-                    element.style.opacity = '1';
-                }
-            });
-        };
-
-        window.addEventListener('scroll', fadeInOnScroll);
-        window.addEventListener('load', fadeInOnScroll);
-
-        // Form Submission
-        const volunteerForm = document.getElementById('volunteerForm');
-        const contactForm = document.getElementById('contactForm');
-
-        // Google Apps Script Web App URL
-        const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwOjUiss76xxbYIIDOe8yaRNBgkfJYyTxR2es1yH7BT702HDXLrjCaS1GobxIrZCvt-0Q/exec';
-        // New endpoint for contact form (replace with your Apps Script URL for sending email)
-        const CONTACT_FORM_URL = 'https://script.google.com/macros/s/AKfycbw3ackhF2ltd7cJ_E9SV3WTGyHdBc7A6am48dNImsmJRVxa1eP9dYtvXvcnmoGs-54Y/exec';
-
-        volunteerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = volunteerForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Loading...';
-            submitBtn.disabled = true;
-            const formData = new FormData(volunteerForm);
+            let result;
             try {
-                const response = await fetch(GOOGLE_SHEET_URL, {
-                    method: 'POST',
-                    body: formData
-                });
-                let result;
-                try {
-                    result = await response.json();
-                } catch {
-                    result = await response.text();
-                }
-                if (response.ok && (result.result === "success" || (typeof result === "string" && result.indexOf("success") !== -1))) {
-                    alert('Thank you for your interest in KYL! We will contact you soon.');
-                    volunteerForm.reset();
-                } else if (response.status === 200 && typeof result === "string" && result.trim() === "") {
-                    alert('Your application was received, but there was a technical issue with the confirmation. Please check your email for updates.');
-                    volunteerForm.reset();
-                } else {
-                    alert('There was an error submitting your application. Please try again later.');
-                }
-            } catch (error) {
+                result = await response.json();
+            } catch {
+                result = await response.text();
+            }
+            if (response.ok && (result.result === "success" || (typeof result === "string" && result.indexOf("success") !== -1))) {
+                alert('Thank you for your interest in KYL! We will contact you soon.');
+                volunteerForm.reset();
+            } else if (response.status === 200 && typeof result === "string" && result.trim() === "") {
                 alert('Your application was received, but there was a technical issue with the confirmation. Please check your email for updates.');
                 volunteerForm.reset();
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
+            } else {
+                alert('There was an error submitting your application. Please try again later.');
             }
-        });
+        } catch (error) {
+            alert('Your application was received, but there was a technical issue with the confirmation. Please check your email for updates.');
+            volunteerForm.reset();
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    });
 
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Loading...';
-            submitBtn.disabled = true;
-            const formData = new FormData(contactForm);
-            try {
-                const response = await fetch(CONTACT_FORM_URL, {
-                    method: 'POST',
-                    body: formData
-                });
-                if (response.ok) {
-                    alert('Your message has been sent. We will get back to you shortly.');
-                    contactForm.reset();
-                } else {
-                    alert('There was an error sending your message. Please try again later.');
-                }
-            } catch (error) {
-                alert('There was an error sending your message. Please try again later.');
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
+    // start
+    // Modern Katagum Youth League JavaScript
+    class ModernKYLWebsite {
+        constructor() {
+            this.init();
+            this.setupEventListeners();
+            this.createParticles();
+            this.setupIntersectionObserver();
+            this.setupScrollEffects();
+            this.setupThemeToggle();
+        }
 
-        // Close mobile menu when clicking a link
-        const navLinks = document.querySelectorAll('nav ul li a');
+        init() {
+            // Theme initialization
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
+            // Create theme toggle button
+            this.createThemeToggle();
+
+            // Initialize smooth scrolling
+            this.initSmoothScroll();
+
+            // Initialize mobile menu
+            this.initMobileMenu();
+
+            // Initialize countdown
+            this.initCountdown();
+
+            // Initialize form handlers
+            this.initForms();
+
+            // Add loading animation
+            this.addLoadingAnimation();
+
+            // Initialize cursor effects
+            this.initCursorEffects();
+        }
+
+        createThemeToggle() {
+            const themeToggle = document.createElement('button');
+            themeToggle.className = 'theme-toggle';
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            themeToggle.setAttribute('aria-label', 'Toggle theme');
+            document.body.appendChild(themeToggle);
+
+            // Update icon based on current theme
+            this.updateThemeIcon(themeToggle);
+        }
+
+        setupThemeToggle() {
+            const themeToggle = document.querySelector('.theme-toggle');
+            if (!themeToggle) return;
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                // Smooth theme transition
+                document.body.style.transition = 'all 0.3s ease';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                this.updateThemeIcon(themeToggle);
+
+                // Add ripple effect
+                this.createRipple(themeToggle, event);
+
+                setTimeout(() => {
+                    document.body.style.transition = '';
+                }, 300);
             });
-        });
+        }
 
-        // Countdown Timer
-        const countdownDate = new Date('2025-08-03T09:00:00').getTime();
+        updateThemeIcon(toggle) {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const icon = toggle.querySelector('i');
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-
-            if (distance < 0) {
-                clearInterval(countdownInterval);
-                document.querySelector('.countdown-card').style.display = 'none';
+            if (currentTheme === 'dark') {
+                icon.className = 'fas fa-sun';
+            } else {
+                icon.className = 'fas fa-moon';
             }
         }
 
-        const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
+        createRipple(element, event) {
+            const ripple = document.createElement('span');
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+
+            ripple.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            left: ${x}px;
+            top: ${y}px;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        `;
+
+            element.style.position = 'relative';
+            element.style.overflow = 'hidden';
+            element.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        }
+
+        createParticles() {
+            const particleContainer = document.createElement('div');
+            particleContainer.className = 'particles-container';
+            particleContainer.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        `;
+            document.body.appendChild(particleContainer);
+
+            // Create floating particles
+            for (let i = 0; i < 50; i++) {
+                this.createParticle(particleContainer);
+            }
+
+            // Create mouse follower particles
+            this.setupMouseParticles();
+        }
+
+        createParticle(container) {
+            const particle = document.createElement('div');
+            const size = Math.random() * 4 + 1;
+            const left = Math.random() * window.innerWidth;
+            const animationDuration = Math.random() * 20 + 10;
+            const opacity = Math.random() * 0.5 + 0.1;
+
+            particle.style.cssText = `
+            position: absolute;
+            width: ${size}px;
+            height: ${size}px;
+            background: linear-gradient(45deg, #f59e0b, #3b82f6);
+            border-radius: 50%;
+            left: ${left}px;
+            top: 100vh;
+            opacity: ${opacity};
+            animation: floatUp ${animationDuration}s linear infinite;
+            box-shadow: 0 0 ${size * 2}px rgba(245, 158, 11, 0.3);
+        `;
+
+            container.appendChild(particle);
+
+            // Remove particle when animation completes
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                    this.createParticle(container); // Create new particle
+                }
+            }, animationDuration * 1000);
+        }
+
+        setupMouseParticles() {
+            let mouseX = 0,
+                mouseY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                // Throttle particle creation
+                if (Math.random() > 0.9) {
+                    this.createMouseParticle(mouseX, mouseY);
+                }
+            });
+        }
+
+        createMouseParticle(x, y) {
+            const particle = document.createElement('div');
+            const size = Math.random() * 3 + 1;
+
+            particle.style.cssText = `
+            position: fixed;
+            width: ${size}px;
+            height: ${size}px;
+            background: radial-gradient(circle, #f59e0b, transparent);
+            border-radius: 50%;
+            left: ${x}px;
+            top: ${y}px;
+            pointer-events: none;
+            z-index: 1000;
+            animation: mouseParticle 1s ease-out forwards;
+        `;
+
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                if (particle.parentNode) {
+                    particle.remove();
+                }
+            }, 1000);
+        }
+
+        setupIntersectionObserver() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+
+                        // Special animations for specific elements
+                        if (entry.target.classList.contains('achievement-number')) {
+                            this.animateNumber(entry.target);
+                        }
+
+                        if (entry.target.classList.contains('progress-bar')) {
+                            this.animateProgressBar(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements with animation classes
+            const animatedElements = document.querySelectorAll(
+                '.fade-in, .glass-card, .achievement-card, .program-card, .team-member, .timeline-item, .involved-card'
+            );
+
+            animatedElements.forEach(el => observer.observe(el));
+        }
+
+        animateNumber(element) {
+            const finalNumber = parseInt(element.textContent);
+            let currentNumber = 0;
+            const increment = finalNumber / 50;
+
+            const updateNumber = () => {
+                currentNumber += increment;
+                if (currentNumber < finalNumber) {
+                    element.textContent = Math.ceil(currentNumber);
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    element.textContent = finalNumber + (element.textContent.includes('+') ? '+' : '');
+                }
+            };
+
+            updateNumber();
+        }
+
+        animateProgressBar(element) {
+            const progress = element.dataset.progress || '100';
+            element.style.width = '0%';
+
+            setTimeout(() => {
+                element.style.width = progress + '%';
+            }, 500);
+        }
+
+        setupScrollEffects() {
+            let ticking = false;
+
+            const updateScrollEffects = () => {
+                const scrollY = window.pageYOffset;
+                const windowHeight = window.innerHeight;
+
+                // Parallax effect for hero background
+                const hero = document.querySelector('.hero');
+                if (hero) {
+                    const speed = scrollY * 0.5;
+                    hero.style.transform = `translateY(${speed}px)`;
+                }
+
+                // Update header on scroll
+                const header = document.getElementById('header');
+                if (header) {
+                    if (scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+
+                // Floating elements
+                document.querySelectorAll('[data-float]').forEach(element => {
+                    const speed = element.dataset.float || 0.1;
+                    const yPos = -(scrollY * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+
+                ticking = false;
+            };
+
+            const requestTick = () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateScrollEffects);
+                    ticking = true;
+                }
+            };
+
+            window.addEventListener('scroll', requestTick, {
+                passive: true
+            });
+        }
+
+        initSmoothScroll() {
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(anchor.getAttribute('href'));
+
+                    if (target) {
+                        const headerHeight = document.getElementById('header')?.offsetHeight || 0;
+                        const targetPosition = target.offsetTop - headerHeight - 20;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+
+                    const isActive = mainNav.classList.contains('active');
+                    mobileMenuBtn.innerHTML = isActive ?
+                        '<i class="fas fa-times"></i>' :
+                        '<i class="fas fa-bars"></i>';
+
+                    // Animate menu items
+                    if (isActive) {
+                        this.animateMenuItems();
+                    }
+
+                    // Prevent body scroll when menu is open
+                    document.body.style.overflow = isActive ? 'hidden' : '';
+                });
+
+                // Close menu when clicking nav links
+                const navLinks = document.querySelectorAll('nav ul li a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        document.body.style.overflow = '';
+                    });
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+        }
+
+        animateMenuItems() {
+            const menuItems = document.querySelectorAll('nav ul li');
+            menuItems.forEach((item, index) => {
+                item.style.animation = `slideInRight 0.3s ease-out ${index * 0.1}s both`;
+            });
+        }
+
+        initCountdown() {
+            const countdownCard = document.getElementById('countdown-card');
+            if (!countdownCard) return;
+
+            // You can replace this with dynamic data from your PHP
+            const targetDate = new Date('2025-08-03T09:00:00').getTime();
+
+            const updateCountdown = () => {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+
+                if (distance > 0) {
+                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    this.updateCountdownDisplay('days', days);
+                    this.updateCountdownDisplay('hours', hours);
+                    this.updateCountdownDisplay('minutes', minutes);
+                    this.updateCountdownDisplay('seconds', seconds);
+
+                    countdownCard.style.display = 'block';
+                } else {
+                    countdownCard.style.display = 'none';
+                }
+            };
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        updateCountdownDisplay(unit, value) {
+            const element = document.getElementById(unit);
+            if (!element) return;
+            element.textContent = String(value).padStart(2, '0');
+        }
+    } // end of class ModernKYLWebsite
+
+    // Initialize the site
+    document.addEventListener('DOMContentLoaded', () => {
+        new ModernKYLWebsite();
+    });
+
+    // end
+
+    // contactForm.addEventListener('submit', async (e) => {
+    //     e.preventDefault();
+    //     const submitBtn = contactForm.querySelector('button[type="submit"]');
+    //     const originalText = submitBtn.textContent;
+    //     submitBtn.textContent = 'Loading...';
+    //     submitBtn.disabled = true;
+    //     const formData = new FormData(contactForm);
+    //     try {
+    //         const response = await fetch(CONTACT_FORM_URL, {
+    //             method: 'POST',
+    //             body: formData
+    //         });
+    //         if (response.ok) {
+    //             alert('Your message has been sent. We will get back to you shortly.');
+    //             contactForm.reset();
+    //         } else {
+    //             alert('There was an error sending your message. Please try again later.');
+    //         }
+    //     } catch (error) {
+    //         alert('There was an error sending your message. Please try again later.');
+    //     } finally {
+    //         submitBtn.textContent = originalText;
+    //         submitBtn.disabled = false;
+    //     }
+    // });
+
+    // // Close mobile menu when clicking a link
+    // const navLinks = document.querySelectorAll('nav ul li a');
+
+    // navLinks.forEach(link => {
+    //     link.addEventListener('click', () => {
+    //         if (mainNav.classList.contains('active')) {
+    //             mainNav.classList.remove('active');
+    //             mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    //         }
+    //     });
+    // });
+
+    // // Countdown Timer
+    // const countdownDate = new Date('2025-08-03T09:00:00').getTime();
+
+    // function updateCountdown() {
+    //     const now = new Date().getTime();
+    //     const distance = countdownDate - now;
+
+    //     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    //     const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    //     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    //     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    //     document.getElementById('days').textContent = String(days).padStart(2, '0');
+    //     document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    //     document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    //     document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+
+    //     if (distance < 0) {
+    //         clearInterval(countdownInterval);
+    //         document.querySelector('.countdown-card').style.display = 'none';
+    //     }
+    // }
+
+    // const countdownInterval = setInterval(updateCountdown, 1000);
+    // updateCountdown();
+</script>
 </body>
 
 </html>

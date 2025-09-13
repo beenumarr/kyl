@@ -97,109 +97,115 @@ if (isset($_POST['profile_update'])) {
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="nav flex-column">
-                        <a href="dashboard.php" class="nav-link">
-                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                        </a>
-                        <a href="applications.php" class="nav-link">
-                            <i class="fas fa-file-alt me-2"></i> Applications
-                        </a>
-                        <a href="events.php" class="nav-link">
-                            <i class="fas fa-calendar me-2"></i> Events
-                        </a>
-                        <a href="admins.php" class="nav-link">
-                            <i class="fas fa-users-cog me-2"></i> Admins
-                        </a>
-                        <a href="settings.php" class="nav-link active">
-                            <i class="fas fa-cog me-2"></i> Settings
-                        </a>
-                    </div>
+       <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link active">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
 
-                    <div class="mt-auto">
-                        <a href="logout.php" class="nav-link">
-                            <i class="fas fa-sign-out-alt me-2"></i> Logout
-                        </a>
-                    </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 px-4 py-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Settings</h2>
-                    <div>
-                        Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?>
+
+        <!-- Main Content -->
+        <div class="main-content px-4 py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Settings</h2>
+                <div class="text-muted">Welcome, <?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="recent-section">
+                        <h5>My Profile</h5>
+                        <?php if ($profileMsg): ?>
+                            <div class="alert alert-info"><?= htmlspecialchars($profileMsg) ?></div>
+                        <?php endif; ?>
+                        <form method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="profile_update" value="1">
+                            <div class="mb-3 text-center">
+                                <?php if (!empty($admin['profile_pic_path']) && file_exists(__DIR__ . '/' . $admin['profile_pic_path'])): ?>
+                                    <img src="<?= htmlspecialchars($admin['profile_pic_path']) ?>" alt="Profile Picture" class="rounded-circle mb-2 admin-profile-pic">
+                                <?php else: ?>
+                                    <img src="../img/placeholder.jpg" alt="Profile Picture" class="rounded-circle mb-2 admin-profile-pic">
+                                <?php endif; ?>
+                                <div>
+                                    <input type="file" name="profile_pic" accept="image/*" class="form-control mt-2">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" name="admin_name" class="form-control" required value="<?= htmlspecialchars($admin['name'] ?? '') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" name="admin_email" class="form-control" required value="<?= htmlspecialchars($admin['email'] ?? '') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="text" name="admin_phone" class="form-control" required value="<?= htmlspecialchars($admin['phone'] ?? '') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Address</label>
+                                <input type="text" name="admin_address" class="form-control" required value="<?= htmlspecialchars($admin['address'] ?? '') ?>">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">About</label>
+                                <textarea name="admin_about" class="form-control" rows="3"><?= htmlspecialchars($admin['about'] ?? '') ?></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Current Password <span class="text-muted" style="font-size: 0.9em;">(required to change password)</span></label>
+                                <input type="password" name="current_password" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">New Password</label>
+                                <input type="password" name="new_password" class="form-control" autocomplete="off">
+                            </div>
+                            <button class="btn-new">Update Profile</button>
+                        </form>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="mb-3">My Profile</h5>
-                                <?php if ($profileMsg): ?>
-                                    <div class="alert alert-info"><?= htmlspecialchars($profileMsg) ?></div>
-                                <?php endif; ?>
-                                <form method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="profile_update" value="1">
-                                    <div class="mb-3 text-center">
-                                        <?php if (!empty($admin['profile_pic_path']) && file_exists(__DIR__ . '/' . $admin['profile_pic_path'])): ?>
-                                            <img src="<?= htmlspecialchars($admin['profile_pic_path']) ?>" alt="Profile Picture" class="rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-                                        <?php else: ?>
-                                            <img src="../img/placeholder.jpg" alt="Profile Picture" class="rounded-circle mb-2" style="width: 100px; height: 100px; object-fit: cover;">
-                                        <?php endif; ?>
-                                        <div>
-                                            <input type="file" name="profile_pic" accept="image/*" class="form-control mt-2">
-                                        </div>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Name</label>
-                                        <input type="text" name="admin_name" class="form-control" required value="<?= htmlspecialchars($admin['name'] ?? '') ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="admin_email" class="form-control" required value="<?= htmlspecialchars($admin['email'] ?? '') ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Phone</label>
-                                        <input type="text" name="admin_phone" class="form-control" required value="<?= htmlspecialchars($admin['phone'] ?? '') ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" name="admin_address" class="form-control" required value="<?= htmlspecialchars($admin['address'] ?? '') ?>">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">About</label>
-                                        <textarea name="admin_about" class="form-control" rows="3"><?= htmlspecialchars($admin['about'] ?? '') ?></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">Current Password <span class="text-muted" style="font-size: 0.9em;">(required to change password)</span></label>
-                                        <input type="password" name="current_password" class="form-control" autocomplete="off">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label class="form-label">New Password</label>
-                                        <input type="password" name="new_password" class="form-control" autocomplete="off">
-                                    </div>
-                                    <button class="btn btn-primary">Update Profile</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="mb-3">Admin Management</h5>
-                                <p>Manage admins and add new administrators.</p>
-                                <a href="admins.php" class="btn btn-success"><i class="fas fa-user-plus me-2"></i>Go to Admin Management</a>
-                            </div>
-                        </div>
+                <div class="col-md-6">
+                    <div class="recent-section">
+                        <h5>Admin Management</h5>
+                        <p>Manage admins and add new administrators.</p>
+                        <a href="admins.php" class="btn-new"><i class="fas fa-user-plus me-2"></i>Go to Admin Management</a>
                     </div>
                 </div>
             </div>

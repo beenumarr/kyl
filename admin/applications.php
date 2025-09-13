@@ -91,202 +91,176 @@ $applications = $stmt->fetchAll();
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <div class="col-md-3 col-lg-2 px-0 sidebar">
-                <div class="text-center py-4">
-                    <img src="../img/logo.png" alt="KYL Logo" style="max-width: 120px;">
-                </div>
-                <div class="d-flex flex-column flex-grow-1">
-                    <div class="nav flex-column">
-                        <a href="dashboard.php" class="nav-link">
-                            <i class="fas fa-tachometer-alt me-2"></i> Dashboard
-                        </a>
-                        <a href="applications.php" class="nav-link active">
-                            <i class="fas fa-file-alt me-2"></i> Applications
-                        </a>
-                        <a href="events.php" class="nav-link">
-                            <i class="fas fa-calendar me-2"></i> Events
-                        </a>
-                        <a href="admins.php" class="nav-link">
-                            <i class="fas fa-users-cog me-2"></i> Admins
-                        </a>
-                        <a href="settings.php" class="nav-link">
-                            <i class="fas fa-cog me-2"></i> Settings
-                        </a>
-                    </div>
+    <div class="sidebar glass-effect">
+        <div class="sidebar-brand">
+            <img src="../img/logo.png" alt="KYL Logo">
+            <span>Admin Panel</span>
+        </div>
+        
+        <div class="d-flex flex-column flex-grow-1 pt-3">
+            <div class="nav flex-column">
+                <a href="dashboard.php" class="nav-link">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="applications.php" class="nav-link active">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Applications</span>
+                </a>
+                <a href="events.php" class="nav-link">
+                    <i class="fas fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+                <a href="admins.php" class="nav-link">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Admins</span>
+                </a>
+                <a href="settings.php" class="nav-link">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </div>
+        </div>
 
-                    <div class="mt-auto">
-                        <a href="logout.php" class="nav-link">
-                            <i class="fas fa-sign-out-alt me-2"></i> Logout
-                        </a>
-                    </div>
+        <div class="sidebar-footer">
+            <div class="admin-profile">
+                <img src="https://ui-avatars.com/api/?name=Admin+User&background=795548&color=fff" alt="Admin">
+                <div class="admin-info">
+                    <div class="admin-name"><?php echo htmlspecialchars($_SESSION['admin_name']); ?></div>
+                    <div class="admin-email">Administrator</div>
                 </div>
             </div>
+            <div style="margin-top:12px;">
+                <a href="logout.php" class="btn btn-outline-light" style="width:100%;">Logout</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Main Content -->
-            <div class="col-md-9 col-lg-10 px-4 py-4">
-                <div class="d-flex justify-content-between align-items-center mb-4">
-                    <h2>Applications Management</h2>
-                    <div>
-                        <a href="batches.php" class="btn btn-secondary me-2">
-                            <i class="fas fa-layer-group me-2"></i> Manage Batches
-                        </a>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exportModal">
-                            <i class="fas fa-download me-2"></i> Export
-                        </button>
-                    </div>
+
+    <div class="main-content">
+        <div class="dashboard-header">
+            <div class="header-left">
+                <h3>Applications Management</h3>
+            </div>
+            <div class="header-right">
+                <a href="batches.php" class="btn btn-secondary"><i class="fas fa-layer-group me-2"></i> Manage Batches</a>
+                <button class="btn-new" data-bs-toggle="modal" data-bs-target="#exportModal"><i class="fas fa-download"></i> Export</button>
+            </div>
+        </div>
+
+        <div class="recent-section mb-4">
+            <form class="row g-3 align-items-end">
+                <div class="col-md-3">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" name="status">
+                        <option value="">All</option>
+                        <option value="pending" <?php echo isset($_GET['status']) && $_GET['status'] === 'pending' ? 'selected' : ''; ?>>Pending</option>
+                        <option value="approved" <?php echo isset($_GET['status']) && $_GET['status'] === 'approved' ? 'selected' : ''; ?>>Approved</option>
+                        <option value="rejected" <?php echo isset($_GET['status']) && $_GET['status'] === 'rejected' ? 'selected' : ''; ?>>Rejected</option>
+                    </select>
                 </div>
-
-                <!-- Filters -->
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <form class="row g-3">
-                            <div class="col-md-4">
-                                <label class="form-label">Status</label>
-                                <select class="form-select" name="status">
-                                    <option value="">All</option>
-                                    <option value="pending" <?php echo isset($_GET['status']) && $_GET['status'] === 'pending' ? 'selected' : ''; ?>>Pending</option>
-                                    <option value="approved" <?php echo isset($_GET['status']) && $_GET['status'] === 'approved' ? 'selected' : ''; ?>>Approved</option>
-                                    <option value="rejected" <?php echo isset($_GET['status']) && $_GET['status'] === 'rejected' ? 'selected' : ''; ?>>Rejected</option>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Batch</label>
-                                <select class="form-select" name="batch_id">
-                                    <option value="">All Batches</option>
-                                    <?php foreach ($batches as $batch): ?>
-                                        <option value="<?php echo $batch['id']; ?>"
-                                            <?php echo $currentBatchId == $batch['id'] ? 'selected' : ''; ?>>
-                                            <?php echo htmlspecialchars($batch['name']); ?>
-                                            (<?php echo ucfirst($batch['status']); ?>)
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Search</label>
-                                <input type="text" class="form-control" name="search"
-                                    value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>"
-                                    placeholder="Search by name or email">
-                            </div>
-                            <div class="col-md-12 mt-3">
-                                <button type="submit" class="btn btn-primary">Apply Filters</button>
-                                <button type="reset" class="btn btn-secondary ms-2" onclick="window.location.href='applications.php'">Reset</button>
-                            </div>
-                        </form>
-                    </div>
+                <div class="col-md-4">
+                    <label class="form-label">Batch</label>
+                    <select class="form-select" name="batch_id">
+                        <option value="">All Batches</option>
+                        <?php foreach ($batches as $batch): ?>
+                            <option value="<?php echo $batch['id']; ?>" <?php echo $currentBatchId == $batch['id'] ? 'selected' : ''; ?>><?php echo htmlspecialchars($batch['name']); ?> (<?php echo ucfirst($batch['status']); ?>)</option>
+                        <?php endforeach; ?>
+                    </select>
                 </div>
+                <div class="col-md-3">
+                    <label class="form-label">Search</label>
+                    <input type="text" class="form-control" name="search" value="<?php echo htmlspecialchars($_GET['search'] ?? ''); ?>" placeholder="Search by name or email">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary w-100">Apply</button>
+                    <button type="button" class="btn btn-secondary w-100 mt-2" onclick="window.location.href='applications.php'">Reset</button>
+                </div>
+            </form>
+        </div>
 
-                <!-- Applications Table -->
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Age</th>
-                                        <th>Location</th>
-                                        <th>Education</th>
-                                        <th>Status</th>
-                                        <th>Date</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($applications as $app): ?>
-                                        <?php
-                                        $birth_date = new DateTime($app['birth_date']);
-                                        $today = new DateTime();
-                                        $age = $birth_date->diff($today)->y;
-                                        ?>
-                                        <tr>
-                                            <td><?php echo htmlspecialchars($app['full_name']); ?></td>
-                                            <td><?php echo htmlspecialchars($app['email']); ?></td>
-                                            <td><?php echo htmlspecialchars($app['phone']); ?></td>
-                                            <td><?php echo $age; ?> years</td>
-                                            <td><?php echo htmlspecialchars($app['local_government'] . ', ' . $app['ward']); ?></td>
-                                            <td><?php echo htmlspecialchars($app['education_level']); ?></td>
-                                            <td>
-                                                <span class="badge bg-<?php
-                                                                        $status = $app['status'] ?? 'pending';
-                                                                        echo $status === 'approved' ? 'success' : ($status === 'rejected' ? 'danger' : 'warning');
-                                                                        ?>">
-                                                    <?php echo ucfirst($status); ?>
-                                                </span>
-                                            </td>
-                                            <td><?php echo date('M d, Y', strtotime($app['created_at'])); ?></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                                        Action
-                                                    </button>
-                                                    <ul class="dropdown-menu">
-                                                        <li>
-                                                            <a class="dropdown-item" href="view_application.php?id=<?php echo $app['id']; ?>">
-                                                                <i class="fas fa-eye me-2"></i> View
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item update-status" href="#" data-id="<?php echo $app['id']; ?>" data-status="approved">
-                                                                <i class="fas fa-check me-2"></i> Approve
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a class="dropdown-item update-status" href="#" data-id="<?php echo $app['id']; ?>" data-status="rejected">
-                                                                <i class="fas fa-times me-2"></i> Reject
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <!-- View modal removed - now using separate page -->
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Pagination -->
-                        <?php if ($total_pages > 1): ?>
+        <div class="recent-section">
+            <h5>Recent Applications</h5>
+            <div class="table-responsive">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Age</th>
+                            <th>Location</th>
+                            <th>Education</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($applications as $app): ?>
                             <?php
-                            // Build query string for pagination
-                            $query_params = $_GET;
-                            unset($query_params['page']); // Remove page from params
-                            $query_string = http_build_query($query_params);
-                            $query_string = $query_string ? '&' . $query_string : '';
+                            $birth_date = new DateTime($app['birth_date']);
+                            $today = new DateTime();
+                            $age = $birth_date->diff($today)->y;
+                            $status = $app['status'] ?? 'pending';
+                            $badgeClass = $status === 'approved' ? 'badge bg-light text-success' : ($status === 'rejected' ? 'badge bg-light text-danger' : 'badge bg-light text-warning');
                             ?>
-                            <nav class="mt-4">
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>">
-                                        <a class="page-link" href="?page=<?php echo $page - 1 . $query_string; ?>">Previous</a>
-                                    </li>
-                                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                                        <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
-                                            <a class="page-link" href="?page=<?php echo $i . $query_string; ?>"><?php echo $i; ?></a>
-                                        </li>
-                                    <?php endfor; ?>
-                                    <li class="page-item <?php echo $page >= $total_pages ? 'disabled' : ''; ?>">
-                                        <a class="page-link" href="?page=<?php echo $page + 1 . $query_string; ?>">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        <?php endif; ?>
-                    </div>
-                </div>
+                            <tr>
+                                <td><?php echo htmlspecialchars($app['full_name']); ?></td>
+                                <td><?php echo htmlspecialchars($app['email']); ?></td>
+                                <td><?php echo htmlspecialchars($app['phone']); ?></td>
+                                <td><?php echo $age; ?> years</td>
+                                <td><?php echo htmlspecialchars($app['local_government'] . ', ' . $app['ward']); ?></td>
+                                <td><?php echo htmlspecialchars($app['education_level']); ?></td>
+                                <td><span class="<?php echo $badgeClass; ?>"><?php echo ucfirst($status); ?></span></td>
+                                <td><?php echo date('M d, Y', strtotime($app['created_at'])); ?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown">Action</button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="view_application.php?id=<?php echo $app['id']; ?>"><i class="fas fa-eye me-2"></i> View</a></li>
+                                            <li><a class="dropdown-item update-status" href="#" data-id="<?php echo $app['id']; ?>" data-status="approved"><i class="fas fa-check me-2"></i> Approve</a></li>
+                                            <li><a class="dropdown-item update-status" href="#" data-id="<?php echo $app['id']; ?>" data-status="rejected"><i class="fas fa-times me-2"></i> Reject</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
+
+            <!-- Pagination -->
+            <?php if ($total_pages > 1): ?>
+                <?php
+                $query_params = $_GET;
+                unset($query_params['page']);
+                $query_string = http_build_query($query_params);
+                $query_string = $query_string ? '&' . $query_string : '';
+                ?>
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item <?php echo $page <= 1 ? 'disabled' : ''; ?>">
+                            <a class="page-link" href="?page=<?php echo $page - 1 . $query_string; ?>">Previous</a>
+                        </li>
+                        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                            <li class="page-item <?php echo $page == $i ? 'active' : ''; ?>">
+                                <a class="page-link" href="?page=<?php echo $i . $query_string; ?>"><?php echo $i; ?></a>
+                            </li>
+                        <?php endfor; ?>
+                        <li class="page-item <?php echo $page >= $total_pages ? 'disabled' : ''; ?>">
+                            <a class="page-link" href="?page=<?php echo $page + 1 . $query_string; ?>">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            <?php endif; ?>
         </div>
     </div>
 
     <!-- Export Modal -->
     <div class="modal fade" id="exportModal" tabindex="-1">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content glass-effect">
                 <div class="modal-header">
                     <h5 class="modal-title">Export Applications</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
@@ -324,7 +298,7 @@ $applications = $stmt->fetchAll();
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" onclick="exportApplications()">Export</button>
+                    <button type="button" class="btn btn-primary btn-new" onclick="exportApplications()">Export to CSV</button>
                 </div>
             </div>
         </div>
